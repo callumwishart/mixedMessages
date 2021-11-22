@@ -2,6 +2,9 @@ function genRand(num) {
     return Math.floor(Math.random() * num);
 }
 
+// Declare person object
+let person = {};
+
 // Determine birth month
 
 const monthMaybe = genRand(13);
@@ -45,42 +48,51 @@ switch (monthMaybe) {
         month = "December";
         break;
     default:
-        month = null;
+        month = "Unknown";
         break;
 }
 
 // Determine handedness
 
-const handedMaybe = genRand(4);
+const handedMaybe = genRand(3);
 let handedness;
 
-if (handedMaybe === 1) {
-    handedness = "right";
+switch (handedMaybe) {
+    case 0:
+        handedness = "right";
+        break;
+    case 1:
+        handedness = "left";
+        break;
+    case 2:
+        handedness = "ambidextrous";
+        break;
+    default:
+        handedness = "unknown";
+        break;
 }
-else if (handedMaybe === 2) {
-    handedness = "left";
-}
-else if (handedMaybe === 3) {
-    handedness = "ambidextrous";
-}
-else {
-    handedness = null;
-}
-
 // Determine length of name and set name
 
 const catPersonMaybe = genRand(3);
 let catPerson;
 
 switch (catPersonMaybe) {
-    case 1:
+    case 0:
         catPerson = true;
         break;
-    case 2:
+    case 1:
         catPerson = false;
+        break;
+    case 2:
+        catPerson = "unknown";
         break;
     default:
         catPerson = null;
         break;
 }
 
+person.birthMonth = month;
+person.hand = handedness;
+person.cat = catPerson;
+
+console.log(person);
