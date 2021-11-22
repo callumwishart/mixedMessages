@@ -3,7 +3,11 @@ function genRand(num) {
 }
 
 // Declare person object
-let person = {};
+let person = {
+    intro() {
+        return `I am born in ${this.birthMonth}, I am ${handedness} handed and am I a cat person? ${catPerson}`;
+    }
+};
 
 // Determine birth month
 
@@ -95,4 +99,4 @@ person.birthMonth = month;
 person.hand = handedness;
 person.cat = catPerson;
 
-console.log(person);
+console.log(person.intro());
