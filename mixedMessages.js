@@ -100,3 +100,4 @@ person.hand = handedness;
 person.cat = catPerson;
 
 console.log(person.intro());
+console.log("Mate IDK if this gonna work ay")
