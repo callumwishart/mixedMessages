@@ -100,3 +100,4 @@ person.hand = handedness;
 person.cat = catPerson;
 
 console.log(person.intro());
+console.log("This is stoopid");
